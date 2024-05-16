@@ -1,0 +1,15 @@
+.footer{
+    @apply bg-white pt-[62px] relative pb-10 flex flex-col gap-[70px] items-center justify-center z-10;
+    &__logo-wrapper{
+        @apply flex flex-col items-center justify-center  gap-[45px];
+    }
+    &__link-wrapper{
+        @apply flex flex-col items-center justify-center gap-[10px]
+    }
+    &__text{
+        @apply text-black text-sm font-medium leading-normal
+    }
+    &__link{
+        @apply text-black text-sm font-medium underline
+    }
+}

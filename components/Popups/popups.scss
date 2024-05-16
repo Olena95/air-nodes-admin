@@ -1,0 +1,87 @@
+.popup-wrapper {
+    @apply w-full h-full bg-black/40 fixed top-0 left-0 flex items-center justify-center z-50;
+    &__content-wrapper {
+        @apply bg-main-white p-[30px] rounded-[15px] w-full max-w-[600px];
+    }
+    &__title {
+        @apply flex items-center justify-between text-black text-[32px] font-bold leading-[35px];
+    }
+}
+
+.content-popup {
+    &__content {
+        @apply flex flex-col gap-[30px] mt-10;
+    }
+    &__item {
+        @apply flex items-center justify-between;
+    }
+    &__text {
+        @apply text-center text-black text-xl font-medium leading-relaxed;
+    }
+    &__key-text {
+        @apply text-base text-black font-medium  leading-tight;
+    }
+    &__check-wrapper {
+        @apply mt-9 flex gap-[18px] items-center;
+        p {
+            @apply text-main-text-color text-[19px] font-medium  leading-normal;
+        }
+    }
+    &__btn-wrapper {
+        @apply mt-[31px] flex justify-between;
+    }
+    &__copy-btn {
+        @apply px-[30px] cursor-pointer flex items-center gap-[5px] py-2.5 bg-white rounded-[15px] border border-main-orange text-main-orange text-xl font-medium;
+        &.copy-btn-gray {
+            @apply border-main-light-gray text-main-gray-40  hover:border-[#636363] hover:text-[#636363];
+        }
+        &.copy-btn-gray:hover svg g g {
+            path {
+                fill: #636363;
+            }
+        }
+    }
+
+    &__alert-block {
+        @apply py-[25.5px] mt-[29.6px] pl-[25px] items-center  gap-5 bg-[#FFEDD5] rounded-[15px] border border-main-orange flex;
+    }
+}
+
+.popup-close-btn svg {
+    cursor: pointer;
+    fill: transparent;
+    rect {
+        stroke-width: 1;
+        transition: all 0.5s ease;
+    }
+    transition: all 0.5s ease;
+}
+
+.popup-close-btn svg:hover {
+    fill: #e5e5e5;
+    rect {
+        stroke-width: 2;
+    }
+}
+
+.custom-checkbox svg {
+    cursor: pointer;
+    rect {
+        fill: transparent;
+        stroke-width: 1;
+        transition: all 0.5s ease;
+    }
+    path {
+        fill: transparent;
+    }
+}
+
+.custom-checkbox svg:hover {
+    rect {
+        fill: #c3e3ff;
+        stroke: #3ca3fc;
+    }
+    path {
+        fill: #3ca3fc;
+    }
+}

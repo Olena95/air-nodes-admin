@@ -1,0 +1,84 @@
+
+.ui-button-slide-title{
+    @apply overflow-hidden relative;
+  &.loginPageBtn{
+    @apply bg-main-blue  py-[22.5px]  rounded-full px-[86px];
+  &.disabled-btn{
+    @apply bg-[#316FA6]  cursor-default
+  }
+  }
+
+}
+
+.container {
+    @apply relative  overflow-hidden cursor-pointer z-20;
+
+    &.loginPageBtn{
+        @apply w-[330px] h-5;
+            &.confirm-once{
+                @apply w-[120px] 
+            }
+    }
+    &.disabled-btn{
+        @apply cursor-default
+      }
+    
+}
+
+.text-wrapper {
+    @apply absolute w-full top-0  translate-y-0 transition-transform duration-500 ease-in-out;
+
+    &.loginPageBtn{
+        @apply  h-5
+    }
+    &.disabled-btn{ 
+        @apply transition-none cursor-default
+    }
+
+        
+}
+
+.text {
+    @apply text-lg  text-white font-bold leading-tight w-full text-center absolute top-1/2  -translate-y-1/2  ;
+    &.disabled-btn{ 
+        @apply text-[#A4A5A7]
+    }
+     
+   
+}
+
+.text1 {
+  @apply left-0;
+
+}
+
+.text2 {
+    @apply left-0 translate-x-0 translate-y-[150%];
+    &.loginPageBtn{
+@apply translate-y-[100%]
+    }
+    
+}
+.ligter{
+    @apply hidden  w-full absolute left-0 rotate-180  rounded-full;
+
+}
+
+.ui-button-slide-title:hover .text-wrapper  {
+    
+ &.loginPageBtn{
+        transform: translateY(-170%);
+      
+    }
+   
+  
+}
+
+
+.ui-button-slide-title:hover .ligter{
+    @apply block
+    }
+
+.ui-button:hover .ligter{
+    @apply block
+    }

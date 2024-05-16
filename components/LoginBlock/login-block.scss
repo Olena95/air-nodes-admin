@@ -1,0 +1,13 @@
+.login-block{
+    @apply bg-stone-50  p-[50px] rounded-[15px] max-w-[600px] w-full;
+    &__title {
+        @apply  text-main-text-color text-[38px] font-bold;
+    }
+    &__input-wrapper{
+        @apply flex flex-col gap-[29px] mt-[30px];
+    }
+    &__forgot-btn{
+        @apply text-main-text-color text-xs font-medium cursor-pointer  mt-[15px]
+    }
+   
+}

@@ -1,0 +1,18 @@
+.input-wrapper{
+    @apply flex flex-col gap-[5px];
+}
+.input-label{
+    @apply text-main-text-color text-lg font-medium;
+}
+.input-icon{
+    @apply cursor-pointer absolute z-10 right-4 top-[15px];
+}
+.custom-input{
+    @apply rounded-xl border text-lg font-medium border-main-light-gray py-[11.5px] px-[18px] outline-main-light-gray cursor-pointer hover:outline-main-light-gray w-full text-main-text-color;
+&.error{
+    @apply border-main-error
+}
+}
+.input-error {
+    @apply  text-main-error text-[10px] w-full text-right leading-4
+}
