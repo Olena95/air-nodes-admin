@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import "./login-block.scss";
 import Input from "../UI/Input";
 import ButtonSlideTitle from "../UI/ButtonSlideTitle";
@@ -8,6 +8,7 @@ const LoginBlock = () => {
     const [changedFields, setChangedFields] = useState<{
         [x: string]: string | number | undefined;
     }>();
+    const [isDisabled, setIsDisabled] = useState(true);
     function handleChangeFields(
         field: string,
         value: string | number | undefined
@@ -19,6 +20,18 @@ const LoginBlock = () => {
 
         setChangedFields(newFields);
     }
+    useEffect(() => {
+        if (
+            changedFields &&
+            "password" in changedFields &&
+            "email" in changedFields &&
+            Object.values(changedFields).every((value) => value !== "")
+        ) {
+            setIsDisabled(false);
+        } else {
+            setIsDisabled(true);
+        }
+    }, [changedFields]);
     return (
         <div className="login-block">
             <div>
@@ -55,7 +68,7 @@ const LoginBlock = () => {
                     title="Continue"
                     className="loginPageBtn"
                     light={true}
-                    isDisabled={false}
+                    isDisabled={isDisabled}
                 />
             </div>
         </div>
