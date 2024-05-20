@@ -31,11 +31,12 @@ const ButtonSlideTitle = ({
                     } `}
                 >
                     <div
-                        className={`text text1 flex gap-1 justify-center items-center ${className} ${
+                        className={`text text1 flex gap-[10px] justify-center items-center ${className} ${
                             isDisabled ? "disabled-btn" : ""
                         }`}
                     >
-                        {leftIcon}
+                        {leftIcon && <div> {leftIcon}</div>}
+
                         <div>{title}</div>
                     </div>
                     <div
@@ -43,7 +44,7 @@ const ButtonSlideTitle = ({
                             isDisabled ? "disabled-btn" : ""
                         }`}
                     >
-                        {leftIcon} <div>{title}</div>
+                        {leftIcon && <div> {leftIcon}</div>} <div>{title}</div>
                     </div>
                 </div>
             </div>

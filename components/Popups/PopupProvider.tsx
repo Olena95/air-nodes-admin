@@ -16,7 +16,7 @@ export const PopupProvider = ({ children }: { children: ReactNode }) => {
     const openPopup = (content: string) => {
         setPopups(content);
     };
-
+    console.log(popups);
     const closePopup = () => {
         setPopups("");
     };

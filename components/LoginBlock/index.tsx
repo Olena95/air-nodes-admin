@@ -2,9 +2,11 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import "./login-block.scss";
 import Input from "../UI/Input";
-import ButtonSlideTitle from "../UI/ButtonSlideTitle";
+import ButtonSlideTitle from "../UI/Buttons/ButtonSlideTitle";
 import LogoHorizontal from "../icons/LogoHorizontal";
+import { useRouter } from "next/navigation";
 const LoginBlock = () => {
+    const router = useRouter();
     const [changedFields, setChangedFields] = useState<{
         [x: string]: string | number | undefined;
     }>();
@@ -69,6 +71,7 @@ const LoginBlock = () => {
                     className="loginPageBtn"
                     light={true}
                     isDisabled={isDisabled}
+                    onClick={() => router.push("/admin-nodes?t=new-nodes")}
                 />
             </div>
         </div>

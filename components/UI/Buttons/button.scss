@@ -1,0 +1,148 @@
+
+.ui-button-slide-title{
+    @apply overflow-hidden relative;
+    &.headerNewBtn,&.headerOutstandingBtn,&.headerCompletedBtn{
+        @apply py-[10px] px-5 rounded-full  border transition-transform hover:border-main-stone-50 border-transparent;
+        &.active{
+            @apply border-main-blue hover:border-main-blue 
+        }
+    }
+    &.deployBtn{
+        @apply bg-black rounded-full py-[7.5px] pl-[15.2px] pr-[15.2px];
+      }
+      &.applyPopupBtn{
+        @apply bg-main-blue  py-[22.5px]  rounded-full px-[86px];
+        &.confirm-once{
+          @apply   px-[73px]
+        }
+      }
+      &.cancelPopupBtn{
+        @apply py-[22.5px] transition-colors duration-300  rounded-full px-[86px] bg-white border border-main-light-gray hover:bg-[#E5E5E5]
+      }
+  &.loginPageBtn{
+    @apply bg-main-blue  py-[22.5px]  rounded-full px-[86px];
+
+    &.disabled-btn{
+    @apply bg-[#316FA6]  cursor-default
+  }
+
+  }
+  
+
+}
+
+.container {
+    @apply relative  overflow-hidden cursor-pointer z-20 h-5;
+
+    &.loginPageBtn{
+        @apply w-[330px] 
+
+    }
+    &.deployBtn{
+        @apply w-[47px]
+    }
+    &.headerNewBtn{
+        @apply w-[80px] 
+      }
+      &.headerOutstandingBtn{
+        @apply w-[170px] 
+      }
+      &.headerCompletedBtn{
+        @apply w-[160px] 
+      }
+    &.disabled-btn{
+        @apply cursor-default
+      }
+   
+      &.applyPopupBtn,  &.cancelPopupBtn     {
+        @apply w-[90px] 
+          
+       
+    }
+    
+}
+
+.text-wrapper {
+    @apply absolute w-full top-0  translate-y-0 transition-transform duration-500 ease-in-out;
+
+    &.loginPageBtn, &.headerNewBtn,&.headerOutstandingBtn,&.headerCompletedBtn,   &.deployBtn,&.applyPopupBtn,&.cancelPopupBtn{
+        @apply  h-5
+    }
+ 
+    &.headerNewBtn,&.headerOutstandingBtn,&.headerCompletedBtn{
+        @apply uppercase
+    }
+    &.disabled-btn{ 
+        @apply transition-none cursor-default
+    }
+
+        
+}
+
+.text {
+    @apply text-lg  text-white font-bold leading-tight w-full text-center absolute top-1/2  -translate-y-1/2  ;
+    &.disabled-btn{ 
+        @apply text-[#A4A5A7]
+    }
+    &.deployBtn{
+        @apply text-[11px] text-white font-bold uppercase  tracking-tight;
+    }
+    &.cancelPopupBtn{
+        @apply text-black;
+    }
+   
+}
+
+.text1 {
+  @apply left-0;
+
+}
+
+.text2 {
+    @apply left-0 translate-x-0 translate-y-[150%];
+    &.loginPageBtn,  &.headerNewBtn,&.headerOutstandingBtn,&.headerCompletedBtn,&.deployBtn,&.applyPopupBtn,&.cancelPopupBtn{
+@apply translate-y-[100%]
+    }
+    
+}
+.ligter{
+    @apply hidden  w-full absolute left-0 rotate-180  rounded-full;
+    &.deployBtn{
+        @apply  h-[347.38px] -top-3  blur-xl bg-[#8EF0F5CC]/30
+ }
+
+}
+
+.ui-button-slide-title:hover .text-wrapper  {
+    
+ &.loginPageBtn,&.applyPopupBtn,&.cancelPopupBtn {
+        transform: translateY(-170%);
+      
+    }
+    &.headerNewBtn,&.headerOutstandingBtn,&.headerCompletedBtn{
+        transform: translateY(-190%);
+    }
+    &.deployBtn {
+        transform: translateY(-100%);
+    }
+  
+}
+
+
+.ui-button-slide-title:hover .ligter{
+    @apply block
+    }
+
+.ui-button:hover .ligter{
+    @apply block
+    }
+
+    .ui-button{
+        @apply relative flex items-center gap-[10px] uppercase leading-tight tracking-tight font-bold py-[10px] px-5 rounded-full border transition-all duration-300 hover:border-main-stone-50 border-transparent;
+        &.active{
+            @apply border-main-blue hover:border-main-blue 
+        }
+        .red-number{
+            @apply absolute -top-2 left-10 text-[15px] font-bold w-5 h-5 bg-red-500 rounded-full
+        }
+    }

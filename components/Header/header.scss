@@ -1,5 +1,5 @@
 .header {
-    @apply max-w-[1280px] mx-auto flex justify-center items-center pt-4 relative px-3;
+    @apply max-w-[1280px] mx-auto flex justify-center items-center pt-[27px] relative px-3;
     &__btn-wrapper-lft {
         @apply absolute flex gap-[10px] left-0;
     }

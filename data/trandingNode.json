@@ -1,0 +1,64 @@
+[
+    {
+        "title": "Avail Light Client 1",
+        "discountPercentage": 50,
+        "desc": "Avail Light Client is a robust base layer with a laser focus on data availability.",
+        "discountPrice": 49.15,
+        "price": 98.03,
+        "id": 1
+    },
+    {
+        "title": "Avail Light Client 2",
+        "discountPercentage": 50,
+        "desc": "Avail Light Client is a robust base layer with a laser focus on data availability.",
+        "discountPrice": 49.15,
+        "price": 98.03,
+        "id": 2
+    },
+    {
+        "title": "Avail Light Client 3",
+        "desc": "Avail Light Client is a robust base layer with a laser focus on data availability.",
+        "price": 98.03,
+        "id": 3
+    },
+    {
+        "title": "Avail Light Client 4",
+
+        "desc": "Avail Light Client is a robust base layer with a laser focus on data availability.",
+
+        "price": 98.03,
+        "id": 4
+    },
+    {
+        "title": "Avail Light Client",
+        "discountPercentage": 50,
+        "desc": "Avail Light Client is a robust base layer with a laser focus on data availability.",
+        "discountPrice": 49.15,
+        "price": 98.03,
+        "id": 5
+    },
+    {
+        "title": "Avail Light Client",
+
+        "desc": "Avail Light Client is a robust base layer with a laser focus on data availability.",
+
+        "price": 98.03,
+        "id": 6
+    },
+    {
+        "title": "Avail Light Client",
+        "discountPercentage": 50,
+        "desc": "Avail Light Client is a robust base layer with a laser focus on data availability.",
+        "discountPrice": 49.15,
+        "price": 98.03,
+        "id": 7
+    },
+    {
+        "title": "Avail Light Client",
+        "discountPercentage": 50,
+        "desc": "Avail Light Client is a robust base layer with a laser focus on data availability.",
+        "discountPrice": 49.15,
+        "price": 98.03,
+        "id": 8
+    }
+]

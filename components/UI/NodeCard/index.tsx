@@ -3,7 +3,7 @@ import "./nodeCard.scss";
 import React, { ReactNode } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import Button from "../ButtonSlideTitle";
+import Button from "../Buttons/ButtonSlideTitle";
 import { usePopups } from "@/components/Popups/PopupProvider";
 interface INodeCard {
     maxWidth: number;
