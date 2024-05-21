@@ -7,6 +7,7 @@ import LogoHorizontal from "../icons/LogoHorizontal";
 import { useRouter } from "next/navigation";
 const LoginBlock = () => {
     const router = useRouter();
+    const [isForgotPassword, setIsForgotPassword] = useState(false);
     const [changedFields, setChangedFields] = useState<{
         [x: string]: string | number | undefined;
     }>();
@@ -22,10 +23,26 @@ const LoginBlock = () => {
 
         setChangedFields(newFields);
     }
+    const clickForgotPassword = () => {
+        const newFields = {
+            email: "",
+            password: undefined,
+        };
+        setChangedFields(newFields);
+        setIsForgotPassword(true);
+    };
     useEffect(() => {
         if (
+            !isForgotPassword &&
             changedFields &&
             "password" in changedFields &&
+            "email" in changedFields &&
+            Object.values(changedFields).every((value) => value !== "")
+        ) {
+            setIsDisabled(false);
+        } else if (
+            isForgotPassword &&
+            changedFields &&
             "email" in changedFields &&
             Object.values(changedFields).every((value) => value !== "")
         ) {
@@ -34,13 +51,16 @@ const LoginBlock = () => {
             setIsDisabled(true);
         }
     }, [changedFields]);
+    console.log(changedFields?.email);
     return (
         <div className="login-block">
             <div>
                 <LogoHorizontal />
             </div>
             <div className="mt-[50px]">
-                <div className="login-block__title">Login</div>
+                <div className="login-block__title">
+                    {isForgotPassword ? "Forgot password?" : "Login"}{" "}
+                </div>
                 <div className="login-block__input-wrapper ">
                     <div>
                         <Input
@@ -49,21 +69,35 @@ const LoginBlock = () => {
                             onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                 handleChangeFields("email", e.target.value)
                             }
+                            value={changedFields?.email}
                         />
                     </div>
-                    <div>
-                        <Input
-                            type="password"
-                            label="Password"
-                            placeholder="Password"
-                            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                                handleChangeFields("password", e.target.value)
-                            }
-                            iconRight={true}
-                        />
-                    </div>
+                    {!isForgotPassword && (
+                        <div>
+                            <Input
+                                type="password"
+                                label="Password"
+                                placeholder="Password"
+                                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                    handleChangeFields(
+                                        "password",
+                                        e.target.value
+                                    )
+                                }
+                                value={changedFields?.password}
+                                iconRight={true}
+                            />
+                        </div>
+                    )}
                 </div>
-                <div className="login-block__forgot-btn">Forgot Password?</div>
+                {!isForgotPassword && (
+                    <div
+                        className="login-block__forgot-btn"
+                        onClick={clickForgotPassword}
+                    >
+                        Forgot Password?
+                    </div>
+                )}
             </div>
             <div className="mt-[55px]">
                 <ButtonSlideTitle

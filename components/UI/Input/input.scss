@@ -8,7 +8,7 @@
     @apply cursor-pointer absolute z-10 right-4 top-[15px];
 }
 .custom-input{
-    @apply rounded-xl border text-lg font-medium border-main-light-gray py-[11.5px] px-[18px] outline-main-light-gray cursor-pointer hover:outline-main-light-gray w-full text-main-text-color;
+    @apply rounded-xl border text-lg font-medium border-main-light-gray py-[11.5px] px-[18px] outline-main-light-gray hover:outline-main-light-gray w-full text-main-text-color;
 &.error{
     @apply border-main-error
 }

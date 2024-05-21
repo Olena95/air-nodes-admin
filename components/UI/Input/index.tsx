@@ -10,6 +10,7 @@ interface IInput {
     placeholder?: string;
     type?: string;
     iconRight?: boolean;
+    value?: string | number;
 }
 const Input = ({
     onChange,
@@ -18,6 +19,7 @@ const Input = ({
     placeholder,
     type = "text",
     iconRight,
+    value,
 }: IInput) => {
     const [inputType, setInputType] = useState(type);
     return (
@@ -29,6 +31,8 @@ const Input = ({
                     className={`custom-input ${errorMessage ? "error" : ""}`}
                     onChange={onChange}
                     placeholder={placeholder}
+                    value={value}
+                    defaultValue={value}
                 />
                 {iconRight && (
                     <div className="input-icon">
