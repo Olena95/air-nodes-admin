@@ -1,69 +1,49 @@
 "use client";
 import "./nodes-block.scss";
 import React from "react";
-import ButtonSlideTitle from "../UI/Buttons/ButtonSlideTitle";
+
 import NodeCard from "../UI/NodeCard";
-import { usePopups } from "../Popups/PopupProvider";
+import NodeSliderMob from "../UI/Slider/NodeSliderMob";
+import { chunkArray } from "@/helpers/chunkArray";
 
 interface INodeBLock {
     title: string;
     nodes: INode[];
 }
 const NodesBlock = ({ title, nodes }: INodeBLock) => {
-    const { openPopup, setIdNode } = usePopups();
-    const handlePopupOpen = (id?: number) => {
-        openPopup && openPopup("edit-node-popup");
-        setIdNode && setIdNode(id!);
-    };
     return (
         <div className="nodes-block">
             <h1 className="general-title">{title}</h1>
 
-            <div className="nodes-block__wrapper  ">
+            <div className="nodes-block__wrapper  hidden md:flex">
                 {nodes.map((item) => (
                     <NodeCard
-                        imageUrl="/images/logo.png"
                         key={item.id}
-                        maxWidth={300}
-                        discountPercentage={item.discountPercentage}
+                        node={item}
                         className="pb-[27px] gap-5"
-                    >
-                        <div className={`pl-[10px] pr-[5px] w-full`}>
-                            <h3 className="card-title">{item.title}</h3>
+                    />
+                ))}
+            </div>
 
-                            <div
-                                className={`card-bottom-block ${
-                                    item.discountPrice
-                                        ? "gap-[13px]"
-                                        : "justify-between "
-                                }`}
-                            >
-                                <div className="price-block">
-                                    <div
-                                        className={` ${
-                                            item.discountPrice
-                                                ? "line-through"
-                                                : ""
-                                        }  price-block__price-text `}
-                                    >
-                                        {`$${item.price}/mo`}
-                                    </div>
-                                    {item.discountPrice && (
-                                        <div className="price-block__price-discount-text ">{`$${item.discountPrice}/mo`}</div>
-                                    )}
-                                </div>
-                                <div>
-                                    <ButtonSlideTitle
-                                        title="Edits"
-                                        className="deployBtn"
-                                        light={true}
-                                        onClick={() => handlePopupOpen(item.id)}
+            <div className="block md:hidden ">
+                <NodeSliderMob>
+                    {chunkArray(nodes, 3).map((block, i) => (
+                        <div key={i} className="px-5 py-[7.5px] ">
+                            {block.map((item: any) => (
+                                <div
+                                    key={item.id}
+                                    className="mt-[15px] flex justify-center "
+                                >
+                                    <NodeCard
+                                        key={item.id}
+                                        node={item}
+                                        className="pb-[27px] gap-5"
                                     />
                                 </div>
-                            </div>
+                            ))}
                         </div>
-                    </NodeCard>
-                ))}
+                    ))}
+                </NodeSliderMob>
             </div>
         </div>
     );

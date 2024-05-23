@@ -16,7 +16,7 @@ const Header = ({ outstandingNodesNumber }: IHeader) => {
     const router = useRouter();
 
     return (
-        <div className="header ">
+        <div className="header hidden lg:flex">
             <div className="absolute left-0 top-3">
                 <Logo />
             </div>

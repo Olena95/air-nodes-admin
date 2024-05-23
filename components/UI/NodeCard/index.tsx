@@ -1,46 +1,73 @@
 "use client";
 import "./nodeCard.scss";
-import React, { ReactNode } from "react";
+import React from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import Button from "../Buttons/ButtonSlideTitle";
+
 import { usePopups } from "@/components/Popups/PopupProvider";
+import ButtonSlideTitle from "../Buttons/ButtonSlideTitle";
 interface INodeCard {
-    maxWidth: number;
-    children: ReactNode;
-    discountPercentage?: number;
+    node: INode;
     className?: string;
-    imageUrl: string;
 }
-function NodeCard({
-    maxWidth,
-    imageUrl,
-    children,
-    discountPercentage,
-    className,
-}: INodeCard) {
+function NodeCard({ node, className }: INodeCard) {
+    const { openPopup, setIdNode } = usePopups();
+    const handlePopupOpen = (id?: number) => {
+        openPopup && openPopup("edit-node-popup");
+        setIdNode && setIdNode(id!);
+    };
     const arr = [1, 2];
     return (
-        <div className="relative cursor-pointer" style={{ maxWidth: maxWidth }}>
+        <div className="relative cursor-pointer">
             {arr.map((item) => (
                 <div
                     className={`node-card node-card-${item} ${className}`}
                     key={item}
                 >
                     <div className="rounded-ss-[15px] rounded-se-[15px] overflow-hidden relative">
-                        {discountPercentage && (
+                        {node.discountPercentage && (
                             <div className="absolute rounded-[5px] text-main-discount top-[10px] right-[10px] text-xs font-semibold py-[3px] px-[5px] bg-white">
-                                {`${discountPercentage}% off`}
+                                {`${node.discountPercentage}% off`}
                             </div>
                         )}
                         <Image
-                            src={imageUrl}
+                            src="/images/logo.png"
                             width={400}
                             height={200}
                             alt="image"
                         />
                     </div>
-                    {children}
+                    <div className={`pl-[10px] pr-[5px] w-full`}>
+                        <h3 className="card-title">{node.title}</h3>
+
+                        <div
+                            className={`card-bottom-block ${
+                                node.discountPrice
+                                    ? "justify-between  md:gap-[13px]"
+                                    : "justify-between "
+                            }`}
+                        >
+                            <div className="price-block">
+                                <div
+                                    className={` ${
+                                        node.discountPrice ? "line-through" : ""
+                                    }  price-block__price-text `}
+                                >
+                                    {`$${node.price}/mo`}
+                                </div>
+                                {node.discountPrice && (
+                                    <div className="price-block__price-discount-text ">{`$${node.discountPrice}/mo`}</div>
+                                )}
+                            </div>
+                            <div>
+                                <ButtonSlideTitle
+                                    title="Edits"
+                                    className="deployBtn"
+                                    light={true}
+                                    onClick={() => handlePopupOpen(node.id)}
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>

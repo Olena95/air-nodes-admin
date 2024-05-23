@@ -1,5 +1,5 @@
 .node-card {
-    @apply bg-white relative w-full rounded-[15px] px-[5px] pt-[5px]  flex flex-col items-center justify-center;
+    @apply bg-white max-w-[335px] md:max-w-[300px] relative w-full rounded-[15px] px-[5px] pt-[5px]  flex flex-col items-center justify-center;
     .card-title {
         @apply text-main-text-color text-base font-bold  leading-tight;
     }
@@ -23,11 +23,18 @@
     @apply absolute top-0;
 }
 .node-card-2 {
-    @apply relative hover:scale-105    z-30;
-    &:hover {
+    @apply relative md:hover:scale-105    z-30;
+
+
+}
+@media (min-width: 700px) {
+    .node-card-2:hover {
         animation: fade 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    animation: fade-out 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    .node-card-2{
+        animation: fade-out 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
 }
 
 @keyframes fade {

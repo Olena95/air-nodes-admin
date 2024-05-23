@@ -5,5 +5,5 @@ body {
     @apply bg-body text-white;
 }
 .general-title {
-    @apply text-center text-white text-[64px] font-bold capitalize leading-[90px];
+    @apply text-center text-white text-5xl md:text-[64px] font-bold capitalize leading-[90px];
 }

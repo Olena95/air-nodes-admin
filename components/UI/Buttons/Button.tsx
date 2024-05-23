@@ -18,7 +18,7 @@ const Button = ({
             {outstandingNodesNumber && (
                 <div className="red-number">{outstandingNodesNumber}</div>
             )}
-            {leftIcon && <div> {leftIcon}</div>} <div>{title}</div>
+            {leftIcon && <div>{leftIcon}</div>} <div>{title}</div>
         </button>
     );
 };

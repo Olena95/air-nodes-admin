@@ -1,9 +1,28 @@
 .header {
-    @apply max-w-[1280px] mx-auto flex justify-center items-center pt-[27px] relative px-3;
+    @apply max-w-[1280px] mx-auto  justify-center items-center pt-[27px] relative px-3;
     &__btn-wrapper-lft {
         @apply absolute flex gap-[10px] left-0;
     }
     &__btn-wrapper-rght {
         @apply absolute flex gap-[10px] items-center right-0;
+    }
+}
+.header-mob {
+    @apply flex justify-between items-center px-5 py-[22px];
+    &__wrapper {
+        @apply relative h-full w-full  flex flex-col justify-between pb-[30.5px];
+    }
+    &__btn-block {
+        @apply relative  z-50  flex flex-col justify-center items-center mt-[121px];
+     
+    }
+    &__btn {
+        @apply gap-[51px] flex flex-col items-center;
+    }
+    &__links {
+        @apply flex flex-col justify-center items-center gap-[37.5px]
+    }
+    &__bottom-text {
+        @apply opacity-75 text-white text-xs font-medium leading-tight 
     }
 }

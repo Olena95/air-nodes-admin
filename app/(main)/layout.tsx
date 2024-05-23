@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PopupProvider } from "@/components/Popups/PopupProvider";
 import Popups from "@/components/Popups";
+import MobTopLeftShape from "@/components/icons/mobileShapes/MobTopLeftShape";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <div className="absolute top-0 left-0">
+                <div className="hidden md:block absolute top-0 left-0">
                     <TopLeftShape />
+                </div>
+                <div className="block md:hidden absolute top-0 left-0">
+                    <MobTopLeftShape />
                 </div>
                 <PopupProvider>
                     {children}

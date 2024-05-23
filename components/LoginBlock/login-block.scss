@@ -1,7 +1,7 @@
 .login-block{
-    @apply bg-stone-50  p-[50px] rounded-[15px] max-w-[600px] w-full;
+    @apply relative z-50 bg-stone-50 p-[30px] md:p-[50px] rounded-[15px] max-w-[600px] w-full;
     &__title {
-        @apply  text-main-text-color text-[38px] font-bold;
+        @apply  text-main-text-color text-[32px] md:text-[38px] font-bold;
     }
     &__input-wrapper{
         @apply flex flex-col gap-[29px] mt-[30px];

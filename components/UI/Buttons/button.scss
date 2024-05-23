@@ -11,16 +11,16 @@
         @apply bg-black rounded-full py-[7.5px] pl-[15.2px] pr-[15.2px];
       }
       &.applyPopupBtn{
-        @apply bg-main-blue  py-[22.5px]  rounded-full px-[86px];
+        @apply bg-main-blue py-[15px] sm:py-[22.5px]  rounded-full flex justify-center px-[43px] sm:px-[86px];
         &.confirm-once{
           @apply   px-[73px]
         }
       }
       &.cancelPopupBtn{
-        @apply py-[22.5px] transition-colors duration-300  rounded-full px-[86px] bg-white border border-main-light-gray hover:bg-[#E5E5E5]
+        @apply py-[15px] sm:py-[22.5px] transition-colors duration-300 flex justify-center  rounded-full px-[38px] sm:px-[86px] bg-white border border-main-light-gray hover:bg-[#E5E5E5]
       }
   &.loginPageBtn{
-    @apply bg-main-blue  py-[22.5px]  rounded-full px-[86px];
+    @apply flex justify-center bg-main-blue w-full py-[15px] md:py-[22.5px]   rounded-full px-[86px];
 
     &.disabled-btn{
     @apply bg-[#316FA6]  cursor-default
@@ -35,7 +35,7 @@
     @apply relative  overflow-hidden cursor-pointer z-20 h-5;
 
     &.loginPageBtn{
-        @apply w-[330px] 
+        @apply w-[100px]  
 
     }
     &.deployBtn{
@@ -55,7 +55,7 @@
       }
    
       &.applyPopupBtn,  &.cancelPopupBtn     {
-        @apply w-[90px] 
+        @apply w-[70px] md:w-[90px] 
           
        
     }
@@ -88,7 +88,10 @@
         @apply text-[11px] text-white font-bold uppercase  tracking-tight;
     }
     &.cancelPopupBtn{
-        @apply text-black;
+        @apply text-black text-[15px] md:text-xl;
+    }
+    &.applyPopupBtn{
+        @apply  text-[15px] md:text-xl;
     }
    
 }

@@ -51,7 +51,7 @@ const LoginBlock = () => {
             setIsDisabled(true);
         }
     }, [changedFields]);
-    console.log(changedFields?.email);
+
     return (
         <div className="login-block">
             <div>

@@ -1,16 +1,16 @@
 .popup-wrapper {
-    @apply w-full h-full bg-black/40 fixed top-0 left-0 flex items-center justify-center z-50;
+    @apply w-full h-full bg-black/40 fixed px-5 top-0 left-0 flex items-center justify-center z-50;
     &__content-wrapper {
-        @apply bg-main-stone-50 p-[30px] rounded-[15px] w-full max-w-[600px];
+        @apply bg-main-stone-50 px-5 py-[25px] md:p-[30px] rounded-[15px] w-full max-w-[600px];
     }
     &__title {
-        @apply flex items-center justify-between text-black text-[32px] font-bold leading-[35px];
+        @apply flex items-center justify-between text-black text-2xl md:text-[32px] font-bold leading-[35px];
     }
 }
 
 .content-popup {
     &__content {
-        @apply flex flex-col gap-[30px] mt-10;
+        @apply flex flex-col gap-5 md:gap-[30px] mt-[30px] md:mt-10;
     }
     &__item {
         @apply flex items-center justify-between;
@@ -28,7 +28,7 @@
         }
     }
     &__btn-wrapper {
-        @apply mt-[31px] flex justify-between;
+        @apply mt-[31px] gap-[5px] flex justify-between;
     }
     &__copy-btn {
         @apply px-[30px] cursor-pointer flex items-center gap-[5px] py-2.5 bg-white rounded-[15px] border border-main-orange text-main-orange text-xl font-medium;
