@@ -36,7 +36,6 @@
 
     &.loginPageBtn{
         @apply w-[100px]  
-
     }
     &.deployBtn{
         @apply w-[47px]
@@ -55,7 +54,7 @@
       }
    
       &.applyPopupBtn,  &.cancelPopupBtn     {
-        @apply w-[70px] md:w-[90px] 
+        @apply w-[70px] md:w-[90px]  h-4 md:h-5
           
        
     }
@@ -118,7 +117,7 @@
 
 .ui-button-slide-title:hover .text-wrapper  {
     
- &.loginPageBtn,&.applyPopupBtn,&.cancelPopupBtn {
+ &.loginPageBtn {
         transform: translateY(-170%);
       
     }
@@ -128,9 +127,20 @@
     &.deployBtn {
         transform: translateY(-100%);
     }
-  
+    &.applyPopupBtn,&.cancelPopupBtn {
+        transform: translateY(-205%);
+      
+    }
 }
+@media (max-width: 750px){
+    .ui-button-slide-title:hover .text-wrapper{
+        &.applyPopupBtn,
+        &.cancelPopupBtn{
+            transform: translateY(-145%);
+        }
+    }
 
+}
 
 .ui-button-slide-title:hover .ligter{
     @apply block
