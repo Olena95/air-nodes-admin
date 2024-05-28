@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 import TopLeftShape from "@/components/icons/shapes/TopLeftShape";
-import Header from "@/components/Header";
+
 import Footer from "@/components/Footer";
 import { PopupProvider } from "@/components/Popups/PopupProvider";
 import Popups from "@/components/Popups";

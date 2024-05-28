@@ -3,7 +3,7 @@ import "./header.scss";
 import React from "react";
 import Logo from "../icons/Logo";
 import { useRouter, useSearchParams } from "next/navigation";
-import ButtonSlideTitle from "../UI/Buttons/ButtonSlideTitle";
+
 import NewBtnIcon from "../icons/NewBtnIcon";
 import Button from "../UI/Buttons/Button";
 import OutstandingBtnIcon from "../icons/OutstandingBtnIcon";
